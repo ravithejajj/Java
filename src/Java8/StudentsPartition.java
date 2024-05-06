@@ -1,15 +1,11 @@
 package Java8;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.function.Supplier;
+
 import java.util.stream.Collectors;
 
 public class StudentsPartition {

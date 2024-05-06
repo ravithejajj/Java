@@ -1,8 +1,10 @@
-package Queue;
+package datastructure.Queue;
 
-import java.util.Arrays;
+
+import java.util.*;
 
 public class QueueArray {
+
     int[] queue;
     int size,front,rear=0;
     int capacity=16;
@@ -12,8 +14,13 @@ public class QueueArray {
     }
     public QueueArray(int capacity)
     {
+
         this.capacity=capacity;
         queue = new int[capacity];
+        Integer[] boxedArray = Arrays.stream(queue).boxed().toArray(Integer[]::new);
+
+        // Sorting in reverse order
+        Arrays.sort(boxedArray, Comparator.reverseOrder());
     }
     public boolean enqueue(int value)
     {
@@ -37,6 +44,7 @@ public class QueueArray {
         }
         else {
             int result = queue[front];
+
             queue[front%capacity]=0;
             front=front%capacity+1;
             size--;
